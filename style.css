@@ -1,0 +1,97 @@
+/* Reseta as margens e padding padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+header, footer {
+    width: 100%;
+    max-width: 100ch;
+    background-color: #4682b4;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+main {
+    width: 100%;
+    max-width: 100ch;
+    background-color: #f0f0f0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Estilos para o formulário de busca */
+.search-form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.search-form button {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Estilos para o ícone de filtro */
+.filter-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-icon svg {
+    margin-right: 0.5rem;
+}
+
+.filter-count {
+    background-color: #ff0000;
+    border-radius: 50%;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    color: white;
+}
+
+dialog {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}

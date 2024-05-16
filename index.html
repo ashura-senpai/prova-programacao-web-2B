@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Página com Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <form class="search-form">
+            <input type="text" id="search-input" placeholder="Buscar...">
+            <button type="submit">🔍</button>
+        </form>
+        <div class="filter-icon" id="filter-icon">
+            <svg width="20" height="20" fill="#f0f0f0" viewBox="0 0 80 90" focusable="false" xmlns="http://www.w3.org/2000/svg">
+                <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+            </svg>
+            <span class="filter-count" id="filter-count">0</span>
+        </div>
+        <dialog id="filter-modal">
+            <form method="dialog">
+                <label for="filter-input">Filtro:</label>
+                <input type="text" id="filter-input">
+                <button type="submit">Aplicar</button>
+                <button type="button" id="close-modal">Fechar</button>
+            </form>
+        </dialog>
+    </header>
+    <main>
+        <p>Conteúdo principal vai aqui.</p>
+    </main>
+    <footer>
+        <p>Footer</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
