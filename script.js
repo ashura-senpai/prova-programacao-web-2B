@@ -8,34 +8,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchForm = document.getElementById('search-form');
     const searchInput = document.getElementById('search-input');
     const filterCount = document.getElementById('filter-count');
-  
+    
     let filters = new URLSearchParams(window.location.search);
     let page = parseInt(filters.get('page')) || 1;
     let perPage = parseInt(filters.get('quantidade')) || 10;
-  
+    
     // Load initial data
     loadNews();
-  
+    updateFilterCount(); // Update filter count on initial load
+    
     // Event listeners
     filterIcon.addEventListener('click', () => {
       filterDialog.showModal();
     });
-  
+    
     document.getElementById('close-dialog').addEventListener('click', () => {
       filterDialog.close();
     });
-  
+    
     filterForm.addEventListener('submit', (e) => {
       e.preventDefault();
       applyFilters();
       filterDialog.close();
     });
-  
+    
     searchForm.addEventListener('submit', (e) => {
       e.preventDefault();
       applySearch();
     });
-  
+    
     pagination.addEventListener('click', (e) => {
       if (e.target.tagName === 'BUTTON') {
         page = parseInt(e.target.textContent);
@@ -43,17 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
         loadNews();
       }
     });
-  
+    
     // Fetch and display news
     async function loadNews() {
       let query = new URLSearchParams(window.location.search);
+      query.set('quantidade', perPage); // Set quantidade in the query string
       let response = await fetch(`${apiUrl}?${query.toString()}`);
       let data = await response.json();
-  
+    
       renderNews(data.items);
       renderPagination(data.totalPages);
     }
-  
+    
     // Render news list
     function renderNews(newsItems) {
       newsList.innerHTML = '';
@@ -70,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newsList.appendChild(li);
       });
     }
-  
+    
     // Render pagination
     function renderPagination(totalPages) {
       pagination.innerHTML = '';
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pagination.appendChild(button);
       }
     }
-  
+    
     // Apply filters and update query string
     function applyFilters() {
       let formData = new FormData(filterForm);
@@ -93,9 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       filters.set('page', 1);
       updateQueryString();
+      updateFilterCount(); // Update filter count when filters are applied
       loadNews();
     }
-  
+    
     // Apply search term and update query string
     function applySearch() {
       let searchTerm = searchInput.value;
@@ -106,14 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       filters.set('page', 1);
       updateQueryString();
+      updateFilterCount(); // Update filter count when search is applied
       loadNews();
     }
-  
+    
     // Update URL query string without reloading
     function updateQueryString() {
       window.history.pushState({}, '', '?' + filters.toString());
     }
-  
+    
     // Format date
     function formatDate(dateString) {
       let date = new Date(dateString);
@@ -124,5 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (diffDays === 0) return 'Publicado hoje';
       return `Publicado há ${diffDays} dias`;
     }
-  });
-  
+    
+    // Update filter count
+    function updateFilterCount() {
+      let activeFilters = 0;
+      filters.forEach((value, key) => {
+        if (key !== 'page' && key !== 'busca') activeFilters++;
+      });
+      filterCount.textContent = activeFilters > 0 ? activeFilters : '';
+      filterCount.style.display = activeFilters > 0 ? 'inline' : 'none';
+    }
+  });  
