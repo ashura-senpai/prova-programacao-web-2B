@@ -1,97 +1,159 @@
-/* Reseta as margens e padding padrões */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #ffffff;
     margin: 0;
-}
-
-header, footer {
-    width: 100%;
-    max-width: 100ch;
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+  }
+  
+  header, footer {
     background-color: #4682b4;
     color: white;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-}
-
-main {
-    width: 100%;
+    padding: 10px;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     max-width: 100ch;
-    background-color: #f0f0f0;
-    padding: 2rem;
+    margin: auto;
+  }
+  
+  form {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-grow: 1;
-}
-
-/* Estilos para o formulário de busca */
-.search-form {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.search-form input[type="text"] {
-    width: 100%;
-    max-width: 400px;
-    padding: 0.5rem 2.5rem 0.5rem 1rem;
-    font-size: 1rem;
-}
-
-.search-form button {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    width: 200px;
+  }
+  
+  button[type="submit"] {
     background: none;
     border: none;
-    font-size: 1rem;
     cursor: pointer;
-}
-
-/* Estilos para o ícone de filtro */
-.filter-icon {
     position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
+    right: 5px;
+  }
+  
+  #filter-icon {
     cursor: pointer;
-}
-
-.filter-icon svg {
-    margin-right: 0.5rem;
-}
-
-.filter-count {
-    background-color: #ff0000;
-    border-radius: 50%;
-    padding: 0.2rem 0.5rem;
-    font-size: 0.8rem;
+  }
+  
+  #filter-count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
     color: white;
-}
-
-dialog {
-    padding: 1rem;
+    border-radius: 50%;
+    padding: 5px 10px;
+    display: none;
+  }
+  
+  main {
+    background-color: #f0f0f0;
+    max-width: 100ch;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  li img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  li h2 {
+    margin: 10px 0;
+  }
+  
+  li p {
+    margin: 5px 0;
+  }
+  
+  li .editorias, li .data {
+    font-size: 0.9em;
+    color: gray;
+  }
+  
+  button.read-more {
+    background-color: #4682b4;
+    color: white;
     border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.6);
-}
+    padding: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+  }
+  
+  #pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  #pagination button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  #pagination button.active {
+    background-color: #4682b4;
+    color: white;
+  }
+  
+  dialog {
+    border: none;
+    padding: 20px;
+    position: relative;
+  }
+  
+  #filter-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  #filter-form label {
+    margin-top: 10px;
+  }
+  
+  #filter-form select, #filter-form input {
+    padding: 5px;
+  }
+  
+  #close-dialog {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 760px) {
+    #filter-form {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
