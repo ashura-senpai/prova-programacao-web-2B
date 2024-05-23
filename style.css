@@ -1,3 +1,11 @@
+/*
+ tirar os seguines elementos:
+
+ anotacoes: 
+ ver como fazer a imagem preencher todo o espaco
+
+*/
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,6 +13,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
+  background-color: #f0f0f0;
 }
 
 header h1 {
@@ -46,6 +55,14 @@ button[type="submit"] {
   right: 5px;
 }
 
+button.leia-mais {
+  width: 100%;
+  border-radius: 6px;
+  padding: 4px;
+  border: none;
+  background-color: #c5c5c5;
+}
+
 #filter-icon {
   cursor: pointer;
 }
@@ -71,22 +88,41 @@ ul {
   padding: 0;
 }
 
-li {
-  margin: 10px 0;
-  padding: 10px;
-  background: white;
-  border: 1px solid #ccc;
+ul li div {
   display: flex;
   flex-direction: column;
 }
 
-li img {
-  max-width: 100%;
-  height: auto;
+ul li div div h5 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
 }
 
-li h2 {
+li {
   margin: 10px 0;
+  padding: 10px;
+  display: flex;
+  /**/
+  align-items: flex-start;
+}
+
+/* li img {
+  max-width: 100%;
+  height: auto;
+} */
+
+li img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+li h2,
+h5 {
+  margin: 0;
 }
 
 li p {
