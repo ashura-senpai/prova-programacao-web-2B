@@ -1,64 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IBGE Notícias</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IBGE Notícias</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <header>
+      <h1>Portal de Notícias do IBGE</h1>
+      <div class="header-content">
+        <form id="search-form">
+          <input
+            type="text"
+            id="search-input"
+            name="busca"
+            placeholder="Buscar..."
+          />
+          <button type="submit">🔍</button>
+        </form>
+        <svg
+          id="filter-icon"
+          width="20"
+          height="20"
+          fill="#f0f0f0"
+          viewBox="0 0 80 90"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"
+            onclick="openFilters()"
+          ></path>
+        </svg>
+        <span id="filter-count"></span>
+      </div>
+    </header>
 
-<body>
-  <header>
-    <h1>Portal de Notícias do IBGE</h1>
-    <div class="header-content">
-      <form id="search-form">
-        <input type="text" id="search-input" name="busca" placeholder="Buscar...">
-        <button type="submit">🔍</button>
+    <main>
+      <ul id="news-list" class="noticia-list"></ul>
+      <ul id="pagination"></ul>
+    </main>
+
+    <dialog id="filter-dialog">
+      <form>
+        <div id="filter-form">
+          <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo">
+              <option selected>Selecione</option>
+              <option value="noticias">Noticias</option>
+              <option value="release">Release</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="quantidade">Quantidade:</label>
+            <select id="quantidade" name="quantidade">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="de">De:</label>
+            <input type="date" id="de" name="de" />
+          </div>
+
+          <div class="form-group">
+            <label for="ate">Até:</label>
+            <input type="date" id="ate" name="ate" />
+          </div>
+
+          <div class="button-group">
+            <button type="button" id="close-dialog" onclick="closeFilters()">
+              x
+            </button>
+          </div>
+        </div>
+        <button type="submit">Aplicar</button>
       </form>
-      <svg id="filter-icon" width="20" height="20" fill="#f0f0f0" viewBox="0 0 80 90"
-        xmlns="http://www.w3.org/2000/svg">
-        <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z" onclick="openFilters()"></path>
-      </svg>
-      <span id="filter-count"></span>
-    </div>
-  </header>
+    </dialog>
 
-  <main>
-    <ul id="news-list" class="noticia-list"></ul>
-    <ul id="pagination"></ul>
-  </main>
+    <footer>
+      <p>&copy Prova do segundo bimestre - Programação WEB</p>
+    </footer>
 
-  <dialog id="filter-dialog">
-    <form id="filter-form">
-      <label for="tipo">Tipo:</label>
-      <select id="tipo" name="tipo">
-        <!-- Options will be populated dynamically -->
-      </select>
-
-      <label for="quantidade">Quantidade:</label>
-      <select id="quantidade" name="quantidade">
-        <option value="5">5</option>
-        <option value="10" selected>10</option>
-        <option value="20">20</option>
-      </select>
-
-      <label for="de">De:</label>
-      <input type="date" id="de" name="de">
-
-      <label for="ate">Até:</label>
-      <input type="date" id="ate" name="ate">
-
-      <button type="submit">Aplicar</button>
-      <button type="button" id="close-dialog" onclick="closeFilters()">x</button>
-    </form>
-  </dialog>
-
-  <footer>
-    <p>&copy Prova do segundo bimestre - Programação WEB</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
