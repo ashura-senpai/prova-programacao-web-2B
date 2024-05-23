@@ -1,174 +1,174 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
 }
 
 header h1 {
-    text-align: center;
+  text-align: center;
 }
 
 header {
-    background-color: #4682b4;
-    color: white;
-    padding: 10px;
+  background-color: #4682b4;
+  color: white;
+  padding: 10px;
 }
 
 .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 10px;
-    column-gap: 50ch;
+  display: flex;
+  gap: 20vw;
+  align-items: center;
+  padding: 10px;
+  justify-content: flex-end;
 }
 
 form {
-    display: flex;
-    align-items: center;
-    position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
 input[type="text"] {
-    padding: 10px;
-    width: 900px;
-    border: none;
-    border-radius: 5px;
+  padding: 10px;
+  width: 50vw;
+  border: none;
+  border-radius: 5px;
 }
 
 button[type="submit"] {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
 }
 
 #filter-icon {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 #filter-count {
-    position: absolute;
-    background: white;
-    color: #4682b4;
-    border-radius: 50%;
-    padding: 1px 3px;
-    font-size: 10px;
+  position: absolute;
+  background: white;
+  color: #4682b4;
+  border-radius: 50%;
+  padding: 1px 3px;
+  font-size: 10px;
 }
 
 main {
-    background-color: #f0f0f0;
-    max-width: 100ch;
-    margin: auto;
-    padding: 10px;
+  background-color: #f0f0f0;
+  max-width: 100ch;
+  margin: auto;
+  padding: 10px;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
-    margin: 10px 0;
-    padding: 10px;
-    background: white;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
+  margin: 10px 0;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
 }
 
 li img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 li h2 {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 li p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 li .editorias,
 li .data {
-    font-size: 0.9em;
-    color: gray;
+  font-size: 0.9em;
+  color: gray;
 }
 
 button.read-more {
-    background-color: #4682b4;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    align-self: flex-start;
+  background-color: #4682b4;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  align-self: flex-start;
 }
 
 #pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 #pagination button {
-    background: none;
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    margin: 0 5px;
-    cursor: pointer;
+  background: none;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
 }
 
 #pagination button.active {
-    background-color: #4682b4;
-    color: white;
+  background-color: #4682b4;
+  color: white;
 }
 
 dialog {
-    border: none;
-    padding: 20px;
-    position: relative;
+  border: none;
+  padding: 20px;
+  position: relative;
 }
 
 #filter-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
 
 #filter-form label {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #filter-form select,
 #filter-form input {
-    padding: 5px;
+  padding: 5px;
 }
 
 #close-dialog {
-    background: none;
-    border: none;
-    position: absolute;
-    top: -15px;
-    left: -18px;
-    cursor: pointer;
+  background: none;
+  border: none;
+  position: absolute;
+  top: -15px;
+  left: -18px;
+  cursor: pointer;
 }
 
 @media (min-width: 760px) {
-    #filter-form {
-        grid-template-columns: 1fr 1fr;
-    }
+  #filter-form {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 footer {
-    background-color: #4682b4;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+  background-color: #4682b4;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
