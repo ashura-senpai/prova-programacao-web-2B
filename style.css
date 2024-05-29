@@ -87,17 +87,17 @@ li{
 #dialog-filtro{
   align-self: center;
   justify-self: center;
-  width: 50vw;
   height: 250px;
+  width: 35vw;
   border: 1px solid black;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 #dialog-filtro form{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content:center;
-  padding: 0 40px;
+  padding: 0 50px;
   gap: 20px;
 }
 
@@ -240,10 +240,10 @@ li{
 }
 
 .pagina-ativa{
-  width: 25px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #4682b4;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
   background-color: #4682b4;
   color: #f0f0f0;
