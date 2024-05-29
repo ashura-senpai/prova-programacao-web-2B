@@ -116,7 +116,7 @@ function createCard(noticia) {
 
   divTexto.setAttribute('id', 'texto-listagem');
 
-  botaoLerMais.textContent = 'Ler Mais';
+  botaoLerMais.textContent = 'Leia mais';
   botaoLerMais.addEventListener('click', () => {
     window.open(noticia.link, '_blank');
   });
