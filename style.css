@@ -228,11 +228,11 @@ li{
 }
 
 .pagina{
-  width: 25px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: 2px solid #4682b4;
   background-color: #f0f0f0;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
   color: #008ebb;
   transition: 0.3s;
