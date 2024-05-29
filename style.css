@@ -77,6 +77,7 @@ button.leia-mais {
 
 #filter-icon {
   cursor: pointer;
+  margin: 0px 5px 0px 0px;
 }
 
 #filter-count {
@@ -86,6 +87,7 @@ button.leia-mais {
   border-radius: 50%;
   padding: 1px 3px;
   font-size: 10px;
+  margin: 20px -5px 5px 0px;
 }
 
 main {
@@ -174,6 +176,19 @@ button.read-more {
   background-color: #4682b4;
   color: white;
 }
+
+.pagination button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background-color: #4682b4;
+    color: white;
+  }  
 
 dialog {
   border-radius: 4px;
